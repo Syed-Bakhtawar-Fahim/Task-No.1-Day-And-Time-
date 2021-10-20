@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a JavaScript program to display the current day and time in the following format.</title>
+</head>
+
+<style>
+    .container {
+        font-size: 23px;
+        background-color: rgb(0, 153, 255);
+        border: 2px solid grey;
+        padding: 34px;
+        margin: 4px;
+        text-align: center;
+        color: #000;
+        font-weight: 500;
+    }
+
+    #time {
+        font-weight: bold;
+    }
+
+    #btn{
+        padding: 6px 8px;
+        border: none;
+        cursor: pointer;
+        background-color: rgb(0, 153, 255);
+        border-radius: 8px;
+    }
+</style>
+<body>
+    <center>
+        
+        <h3>Day And Time Task</h3>
+        <h2>Day is: <span id="day"> <button id="btn" onclick="DayFun()">Check</button></span></h2>
+       
+        
+    </center>
+
+    <div class="container" onclick="DayFun()">
+        Current Day And Time is: <span id="time"></span>
+        
+    </div>
+</body>
+
+
+<script>
+      let now = new Date();
+        console.log(now);
+        document.getElementById("time").innerHTML = now;
+    
+    let DayFun = () =>{
+
+      let day = new Date().getDay()
+        console.log(day)  
+    
+        
+        if(day == 0){
+            day = "Sunday"
+        }else if(day ==1){
+            day = "Monday";
+        }else if(day == 2){
+            day = "Tuesday"
+        }else if(day == 3){
+            day = "Wednesday"
+        }else if(day == 4){
+            day = "Thursday"
+        }else if(day == 5){
+            day == "Friday"
+        }else{
+            day = "saturday"
+        }
+        document.getElementById("day").innerHTML = day
+
+    }
+
+
+      
+</script>
+</html>
